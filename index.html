@@ -1,182 +1,102 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Analog CLock</title>
-  
-<style>
-	@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap");
-*, *:afater, *:before {
-  box-sizing: border-box;
-}
-
-body, html {
-  background: #000;
-  margin: 0;
-  height: 100vh;
-  color: #fff;
-  font-family: "Comfortaa", cursive;
-}
-
-.clock {
-  --clock-size: 360px;
-  width: var(--clock-size);
-  height: var(--clock-size);
-  position: fixed;
-  inset: 0;
-  margin: auto;
-  border-radius: 50%;
-}
-.spike {
-  position: absolute;
-  width: 8px;
-  height: 1px;
-  background: #fff9;
-  line-height: 20px;
-  transform-origin: 50%;
-  z-index: 5;
-  inset: 0;
-  margin: auto;
-  font-style: normal;
-  transform: rotate(var(--rotate)) translateX(var(--dail-size));
-}
-.spike:nth-child(5n+1) {
-  box-shadow: -7px 0 #fff9;
-}
-.spike:nth-child(5n+1):after {
-  content: attr(data-i);
-  position: absolute;
-  right: 22px;
-  top: -10px;
-  transition: 1s linear;
-  transform: rotate(calc( var(--dRotate) - var(--rotate)));
-}
-
-.seconds {
-  --dRotate: 0deg;
-  --dail-size: calc((var(--clock-size)/ 2) - 8px);
-  font-weight: 800;
-  font-size: 18px;
-  transform: rotate(calc( -1 * var(--dRotate)));
-  position: absolute;
-  inset: 0;
-  margin: auto;
-  transition: 1s linear;
-}
-
-.minutes {
-  --dail-size: calc((var(--clock-size)/ 2) - 65px);
-  font-size: 16px;
-  transform: rotate(calc( -1 * var(--dRotate)));
-  position: absolute;
-  inset: 0;
-  margin: auto;
-  transition: 1s linear;
-}
-
-.stop-anim {
-  transition: 0s linear;
-}
-.stop-anim .spike:after {
-  transition: 0s linear !important;
-}
-
-.hour {
-  font-size: 70px;
-  font-weight: 900;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.minute {
-  font-size: 36px;
-  font-weight: 900;
-  position: absolute;
-  background: #000;
-  z-index: 10;
-  right: calc(var(--clock-size)/ 4.5);
-  top: 50%;
-  transform: translateY(-50%);
-}
-.minute:after {
-  content: "";
-  position: absolute;
-  border: 2px solid #fff;
-  border-right: none;
-  height: 50px;
-  left: -10px;
-  top: 50%;
-  border-radius: 40px 0 0 40px;
-  width: calc(var(--clock-size)/ 2.75);
-  transform: translatey(-50%);
-}
-</style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kepuvv | DevOps & Jira Engineer</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #0d1117;
+      color: #c9d1d9;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 60px auto;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+    h2 {
+      margin-top: 40px;
+      border-bottom: 1px solid #30363d;
+      padding-bottom: 5px;
+    }
+    p {
+      line-height: 1.6;
+    }
+    .links a {
+      color: #58a6ff;
+      text-decoration: none;
+      margin-right: 15px;
+    }
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .tag {
+      background: #161b22;
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+  </style>
 </head>
 <body>
+  <div class="container">
+    <h1>Kepuvv</h1>
+    <p>DevOps Engineer & Atlassian (Jira/Confluence) Administrator</p>
 
-<second class="clock">
-  <div class="seconds"></div>
-  <div class="minutes"></div>
-  <div class="minute">44</div>
-  <div class="hour"></div>
-</second>
+    <div class="links">
+      <a href="https://github.com/kepuvv" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/kirill-y-570b11162" target="_blank">LinkedIn</a>
+    </div>
 
-  <script>
-	const seconds = document.querySelector('.seconds');
-const minutes = document.querySelector('.minutes');
-const minute = document.querySelector('.minute');
-const hour = document.querySelector('.hour');
+    <h2>About</h2>
+    <p>
+      DevOps engineer and Atlassian specialist with strong experience in
+      high-availability Jira Data Center and Confluence environments.
+      Focused on building scalable infrastructure, automation, and reliable CI/CD pipelines.
+    </p>
 
-// Create spikes
-for(let s = 0; s < 60 ; s++){
-  let mSpikeEl = document.createElement('i');
-  let sSpikeEl = document.createElement('i');
-  mSpikeEl.className = 'spike'
-  sSpikeEl.className = 'spike'
-  mSpikeEl.style = `--rotate:${6 * s}deg`;
-  sSpikeEl.style = `--rotate:${6 * s}deg`;
-  mSpikeEl.setAttribute('data-i', s);
-  sSpikeEl.setAttribute('data-i', s);
+    <h2>Core Skills</h2>
+    <div class="skills">
+      <div class="tag">Jira Data Center</div>
+      <div class="tag">Confluence</div>
+      <div class="tag">Kubernetes</div>
+      <div class="tag">Docker</div>
+      <div class="tag">AWS</div>
+      <div class="tag">Terraform</div>
+      <div class="tag">Ansible</div>
+      <div class="tag">GitLab CI</div>
+      <div class="tag">ArgoCD</div>
+      <div class="tag">Helm</div>
+      <div class="tag">Linux</div>
+      <div class="tag">Nginx / HAProxy</div>
+    </div>
 
-  seconds.append(sSpikeEl);
-  minutes.append(mSpikeEl);
-}
+    <h2>Experience Highlights</h2>
+    <p>
+      • Building and supporting CI/CD pipelines<br>
+      • Kubernetes cluster administration (HA, self-hosted)<br>
+      • Jira DC customization (ScriptRunner, automation, plugins)<br>
+      • Monitoring stack: Prometheus, Grafana, Alertmanager<br>
+      • Infrastructure as Code (Terraform, Ansible)<br>
+      • Incident response and troubleshooting
+    </p>
 
-function getTime() {
-		let date = new Date(),
-    s  = date.getSeconds() ,
-    m  = date.getMinutes();
-  
-  	hour.textContent = date.getHours();
-  	minute.textContent = m;
-  
+    <h2>Focus</h2>
+    <p>
+      Currently focused on Kubernetes, GitOps, and improving system reliability
+      through automation and observability.
+    </p>
 
-  	minutes.style = `--dRotate:${6 * m}deg`;
-
-    if(s == 0){
-			seconds.classList.add('stop-anim')
-    } else{
-      seconds.classList.remove('stop-anim')
-    }
-    if(m == 0){
-			minutes.classList.add('stop-anim')
-    } else{
-      minutes.classList.remove('stop-anim')
-    }
-  	
-  		seconds.style = `--dRotate:${6 * s}deg`;
-}
-
-
-
-
-
-
-setInterval(getTime, 1000);
-getTime();
-  </script>
-
+  </div>
 </body>
 </html>
