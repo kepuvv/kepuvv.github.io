@@ -74,6 +74,10 @@ cp terraform.tfvars.example terraform.tfvars
 
 `availability_domain_name` — to determine the appropriate Availability Domain, run:
 
+```
+export OCI_COMPARTMENT_OCID=$(cat ~/.oci/config | grep 'tenancy' | cut -d= -f2)
+```
+
 ```bash
 for ad in $(oci iam availability-domain list --compartment-id "$OCI_COMPARTMENT_OCID" --query 'data[].name' | jq -r '.[]'); do
   echo "=== $ad ===\n"
@@ -197,3 +201,5 @@ terraform init -backend-config=backend.s3.tfbackend
 terraform plan
 terraform apply
 ```
+
+After the deployment completes, Terraform automatically generates an Ansible inventory file that can be used to manage the newly created virtual machines with Ansible.
