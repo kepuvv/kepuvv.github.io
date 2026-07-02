@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OCI Free Tier — Terraform</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background:#0d1117; color:#c9d1d9; margin:0; }
+    .container { max-width:800px; margin:40px auto; padding:20px; }
+    a { color:#58a6ff }
+    pre { background:#0b1014; padding:12px; border-radius:6px; overflow:auto }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <p><a href="/">← Home</a></p>
+    <h1>OCI Free Tier — Terraform</h1>
+    <div id="content">Загрузка...</div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    fetch('oci-free-tier-terraform.md')
+      .then(res => {
+        if (!res.ok) throw new Error('Не удалось загрузить файл: ' + res.status);
+        return res.text();
+      })
+      .then(md => {
+        document.getElementById('content').innerHTML = marked.parse(md);
+      })
+      .catch(err => {
+        document.getElementById('content').textContent = err.message;
+      });
+  </script>
+</body>
+</html>
