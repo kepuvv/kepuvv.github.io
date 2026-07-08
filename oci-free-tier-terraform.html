@@ -15,14 +15,14 @@
   <div class="container">
     <p><a href="/">← Home</a></p>
     <h1>OCI Free Tier — Terraform</h1>
-    <div id="content">Загрузка...</div>
+    <div id="content">Loading...</div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script>
     fetch('oci-free-tier-terraform.md')
       .then(res => {
-        if (!res.ok) throw new Error('Не удалось загрузить файл: ' + res.status);
+        if (!res.ok) throw new Error('Failed to load file: ' + res.status);
         return res.text();
       })
       .then(md => {
